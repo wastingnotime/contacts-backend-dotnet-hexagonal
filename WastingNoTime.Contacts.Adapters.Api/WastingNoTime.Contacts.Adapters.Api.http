@@ -1,0 +1,6 @@
+@WastingNoTime.Contacts.Adapters.Api_HostAddress = http://localhost:5122
+
+GET {{WastingNoTime.Contacts.Adapters.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

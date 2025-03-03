@@ -1,0 +1,42 @@
+@host = http://localhost:5122
+ 
+@resource = Contacts 
+@contentType = application/json
+
+@baseUrl = {{host}}
+
+### 
+# @name getAllContacts 
+GET {{baseUrl}}/Contacts
+Accept: application/json
+
+### 
+# @name createContact 
+POST {{baseUrl}}/Contacts 
+Accept: {{contentType}} 
+Content-Type: {{contentType}}
+
+{
+    "firstName": "First", "lastName": "Last", "phoneNumber": "3333-1111"
+}
+
+> {% client.global.set("contact", response.body); %}
+
+### 
+# @name getOneContact 
+GET {{baseUrl}}/Contacts/{{contact.id}} 
+Accept: {{contentType}}
+
+### 
+# @name updateContact 
+PUT {{baseUrl}}/Contacts/{{contact.id}} 
+Accept: {{contentType}} 
+Content-Type: {{contentType}}
+
+{
+    "id": "{{contact.id}}", "firstName": "FirstUpdated", "lastName": "LastUpdated", "phoneNumber": "3333-2222"
+}
+
+### 
+# @name deleteContact 
+DELETE {{baseUrl}}/Contacts/{{contact.id}}
