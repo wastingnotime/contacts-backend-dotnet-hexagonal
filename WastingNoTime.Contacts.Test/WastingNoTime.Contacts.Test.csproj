@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WastingNoTime.Contacts\WastingNoTime.Contacts.csproj" />
+    <ProjectReference Include="..\WastingNoTime.Contacts.Domain\WastingNoTime.Contacts.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

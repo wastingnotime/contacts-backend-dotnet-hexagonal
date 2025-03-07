@@ -11,8 +11,8 @@
     </ItemGroup>
     
     <ItemGroup>
-      <ProjectReference Include="..\WastingNoTime.Contacts.Adapters.SQLite\WastingNoTime.Contacts.Adapters.SQLite.csproj" />
-      <ProjectReference Include="..\WastingNoTime.Contacts\WastingNoTime.Contacts.csproj" />
+      <ProjectReference Include="..\WastingNoTime.Contacts.Adapter.SQLite\WastingNoTime.Contacts.Adapter.SQLite.csproj" />
+      <ProjectReference Include="..\WastingNoTime.Contacts.Application\WastingNoTime.Contacts.Application.csproj" />
     </ItemGroup>
 
 </Project>
