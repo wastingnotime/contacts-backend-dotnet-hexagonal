@@ -1,0 +1,21 @@
+# git
+.git
+.gitignore
+.github
+
+# dotnet
+bin
+obj
+
+# dev stuff
+contacts.db
+verify.rest
+
+# ide's
+.vscode
+.idea
+
+# misc
+.dockerignore
+dockerfile
+README.md
