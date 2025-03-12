@@ -1,4 +1,5 @@
-@host = http://localhost:5122
+#@host = http://localhost:5122
+@host = http://localhost:8010
  
 @resource = Contacts 
 @contentType = application/json

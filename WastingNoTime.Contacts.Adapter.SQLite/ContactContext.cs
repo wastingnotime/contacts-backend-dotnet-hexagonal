@@ -8,14 +8,18 @@ public class ContactContext : DbContext
 {
     //dotnet ef migrations add initial --project WastingNoTime.Contacts.Domain.Adapters.SQLite
     //dotnet ef database update --project WastingNoTime.Contacts.Domain.Adapters.SQLite
+
     #region issue with migrations
 
-    public ContactContext() 
+    public ContactContext()
     {
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        if (optionsBuilder.IsConfigured)
+            return;
+
         optionsBuilder.UseSqlite("Data Source=../contacts.db;");
     }
 
