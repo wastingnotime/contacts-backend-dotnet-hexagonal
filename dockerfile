@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-stage
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build-stage
 
 ENV PATH="${PATH}:/root/.dotnet/tools"
 
@@ -17,9 +17,9 @@ RUN dotnet publish -c Release -o out
 RUN dotnet test
 RUN dotnet ef database update --project WastingNoTime.Contacts.Adapter.SQLite
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 as deploy-stage
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 as deploy-stage
 WORKDIR /app
-EXPOSE 8010:5122
+EXPOSE 8010:8080
 
 COPY --from=build-stage /app/out .
 
