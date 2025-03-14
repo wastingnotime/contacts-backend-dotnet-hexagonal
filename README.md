@@ -3,7 +3,7 @@
 **contacts-backend-dotnet-hexagonal** is part of "contacts" project that is an initiative where we try to explore frontend and backend implementations in order to better understand it cutting-edge features. This repository presents a dotnet rest API sample using hexagonal architecture.
 
 ## stack
-* dotnet 8.0
+* dotnet 9.0
 * webapi
 * sqlite
 * entity framework
@@ -36,7 +36,7 @@ docker run -p 8010:8080 contacts-backend-dotnet-hexagonal
 
 ### option 3 - execute from source code
 
-- install dotnet 8 [how to](https://learn.microsoft.com/en-us/dotnet/core/install/linux)
+- install dotnet 9 [how to](https://learn.microsoft.com/en-us/dotnet/core/install/linux)
 - go to root of solution and execute the commands below
 
 set environment for development
@@ -61,7 +61,7 @@ dotnet ef database update --project WastingNoTime.Contacts.Adapter.SQLite
 
 and then run the application
 ```
-dotnet run 
+ dotnet run --project WastingNoTime.Contacts.Adapter.Api
 ```
 
 ## testing
