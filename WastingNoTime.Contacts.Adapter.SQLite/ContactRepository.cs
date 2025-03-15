@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using WastingNoTime.Contacts.Adapter.SQLite.Types;
 using WastingNoTime.Contacts.Domain.Entities;
 using WastingNoTime.Contacts.Domain.Exceptions;
@@ -6,7 +5,7 @@ using WastingNoTime.Contacts.Port.Outbound.Persistence;
 
 namespace WastingNoTime.Contacts.Adapter.SQLite;
 
-public class ContactRepository: ISaveContact , IUpdateContact, IDeleteContact, IExistsContact, IGetContact {
+public class ContactRepository: ISaveContact , IUpdateContact, IDeleteContact {
     
     private readonly ContactContext _context ;
     
@@ -45,20 +44,5 @@ public class ContactRepository: ISaveContact , IUpdateContact, IDeleteContact, I
         _context.Contacts.Remove(current);
         
         await _context.SaveChangesAsync();
-    }
-
-    public Task<bool> ExistsAsync(Contact.ContactId id)
-    {
-        return _context
-            .Contacts
-            .AnyAsync(c => c.Id == id.Id);
-    }
-
-    public Task<Contact> GetAsync(Contact.ContactId id)
-    {
-        return _context
-            .Contacts
-            .Select(c=> new Contact(c.FirstName, c.LastName,c.PhoneNumber){Id = new Contact.ContactId( c.Id)})
-            .FirstOrDefaultAsync(c => c.Id.Id == id.Id);
     }
 }

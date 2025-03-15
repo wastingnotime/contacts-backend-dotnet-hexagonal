@@ -3,9 +3,9 @@ namespace WastingNoTime.Contacts.Domain.Entities;
 public class Contact
 {
     public ContactId Id { get; init; }
-    public string FirstName { get; set; }
-    public string LastName { get; set;}
-    public string PhoneNumber { get; set;}
+    public string FirstName { get; }
+    public string LastName { get; }
+    public string PhoneNumber { get; }
 
     public Contact(string firstName, string lastName, string phoneNumber)
     {

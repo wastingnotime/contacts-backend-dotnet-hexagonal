@@ -15,8 +15,6 @@ public static class SqLiteServiceCollectionExtensions
             .AddScoped<ISaveContact, ContactRepository>()
             .AddScoped<IUpdateContact, ContactRepository>()
             .AddScoped<IDeleteContact, ContactRepository>()
-            .AddScoped<IExistsContact, ContactRepository>()
-            .AddScoped<IGetContact, ContactRepository>()
             .AddScoped<IContactQuery, ContactQuery>()
             .AddDbContext<ContactContext>(options =>
                 options.UseSqlite(configuration.GetConnectionString("contactsDb")));
