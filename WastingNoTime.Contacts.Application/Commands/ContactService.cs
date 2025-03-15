@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using WastingNoTime.Contacts.Domain.Entities;
-using WastingNoTime.Contacts.Domain.Exceptions;
 using WastingNoTime.Contacts.Port.Inbound.UseCases;
 using WastingNoTime.Contacts.Port.Outbound.Persistence;
 
@@ -11,21 +10,15 @@ public class ContactService : ICreateContactUseCase, IUpdateContactUseCase, IDel
     private readonly ISaveContact _saveContact;
     private readonly IUpdateContact _updateContact;
     private readonly IDeleteContact _deleteContact;
-    private readonly IExistsContact _existsContact;
-    private readonly IGetContact _getContact;
 
     public ContactService(
         ISaveContact saveContact,
         IUpdateContact updateContact,
-        IDeleteContact deleteContact,
-        IExistsContact existsContact,
-        IGetContact getContact)
+        IDeleteContact deleteContact)
     {
         _saveContact = saveContact;
         _updateContact = updateContact;
         _deleteContact = deleteContact;
-        _existsContact = existsContact;
-        _getContact = getContact;
     }
 
     public async Task<ICreateContactUseCase.Result> Execute(ICreateContactUseCase.Command command)
