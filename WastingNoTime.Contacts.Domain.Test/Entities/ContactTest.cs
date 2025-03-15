@@ -1,6 +1,6 @@
 using WastingNoTime.Contacts.Domain.Entities;
 
-namespace WastingNoTime.Contacts.Test.Domain.Entities;
+namespace WastingNoTime.Contacts.Domain.Test.Entities;
 
 public class ContactTest
 {
@@ -24,8 +24,8 @@ public class ContactTest
         Assert.NotNull(entity.Id);
         Assert.IsType<Contact.ContactId>(entity.Id);
         Assert.IsType<Guid>(entity.Id.Id);
-        Assert.True(entity.FirstName == firstName);
-        Assert.True(entity.LastName == lastName);
-        Assert.True(entity.PhoneNumber == phoneNumber);
+        Assert.Equal(entity.FirstName , firstName);
+        Assert.Equal(entity.LastName , lastName);
+        Assert.Equal(entity.PhoneNumber , phoneNumber);
     }
 }
