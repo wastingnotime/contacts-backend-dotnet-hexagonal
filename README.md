@@ -20,7 +20,7 @@
 
 execute the remote docker image
 ```
-docker run -p 8010:8010 wastingnotime/contacts-backend-dotnet-hexagonal:0.1.1-alpha
+docker run -p 8010:8080 wastingnotime/contacts-backend-dotnet-hexagonal:0.1.1-alpha
 ```
 
 ### option 2 - build and run a local docker image
